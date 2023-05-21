@@ -12,8 +12,6 @@ class MealsController extends AbstractController
     #[Route('/meals', name: 'app_meals')]
     public function index(MealRepository $repository): JsonResponse
     {
-        return $this->json($repository->findAll(), 200, [
-            'Access-Control-Allow-Origin' => '*'
-        ]);
+        return $this->json($repository->findAll());
     }
 }
